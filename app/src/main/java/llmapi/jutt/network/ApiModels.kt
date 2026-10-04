@@ -2,18 +2,6 @@ package llmapi.jutt.network
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
-
-interface FreeLlmApiService {
-    @GET("/v1/models")
-    suspend fun getModels(): ModelListResponse
-
-    @POST("/v1/chat/completions")
-    suspend fun chatCompletions(@Body request: ChatRequest): ChatResponse
-}
 
 @Serializable
 data class ModelListResponse(
@@ -31,7 +19,8 @@ data class ModelDto(
     val modality: String? = null,
     @SerialName("context_window") val contextWindow: Int? = null,
     val provider: String? = null,
-    val endpointType: String? = null
+    val endpointType: String? = null,
+    val free: Boolean = false
 )
 
 @Serializable
@@ -40,7 +29,7 @@ data class ChatRequest(
     val messages: List<MessageDto>,
     val stream: Boolean = false,
     val temperature: Double? = null,
-    val maxTokens: Int? = null
+    @SerialName("max_tokens") val maxTokens: Int? = null
 )
 
 @Serializable
@@ -59,12 +48,13 @@ data class ChatResponse(
 @Serializable
 data class ChoiceDto(
     val message: MessageDto? = null,
-    val finishReason: String? = null
+    val finishReason: String? = null,
+    @SerialName("finish_reason") val finishReasonAlt: String? = null
 )
 
 @Serializable
 data class UsageDto(
-    val promptTokens: Int = 0,
-    val completionTokens: Int = 0,
-    val totalTokens: Int = 0
+    @SerialName("prompt_tokens") val promptTokens: Int = 0,
+    @SerialName("completion_tokens") val completionTokens: Int = 0,
+    @SerialName("total_tokens") val totalTokens: Int = 0
 )

@@ -5,25 +5,26 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColors = darkColorScheme(
-    primary = androidx.compose.ui.graphics.Color(0xFF8AB4F8),
-    secondary = androidx.compose.ui.graphics.Color(0xFFB8C7FF),
-    background = androidx.compose.ui.graphics.Color(0xFF111827),
-    surface = androidx.compose.ui.graphics.Color(0xFF1F2937),
-    onPrimary = androidx.compose.ui.graphics.Color(0xFF0F172A),
-    onBackground = androidx.compose.ui.graphics.Color(0xFFE5E7EB),
-    onSurface = androidx.compose.ui.graphics.Color(0xFFE5E7EB),
+    primary = Color(0xFF8AB4F8),
+    secondary = Color(0xFFB8C7FF),
+    background = Color(0xFF111827),
+    surface = Color(0xFF1F2937),
+    onPrimary = Color(0xFF0F172A),
+    onBackground = Color(0xFFE5E7EB),
+    onSurface = Color(0xFFE5E7EB),
 )
 
 private val LightColors = lightColorScheme(
-    primary = androidx.compose.ui.graphics.Color(0xFF2563EB),
-    secondary = androidx.compose.ui.graphics.Color(0xFF4F46E5),
-    background = androidx.compose.ui.graphics.Color(0xFFF8FAFC),
-    surface = androidx.compose.ui.graphics.Color(0xFFFFFFFF),
-    onPrimary = androidx.compose.ui.graphics.Color(0xFFFFFFFF),
-    onBackground = androidx.compose.ui.graphics.Color(0xFF0F172A),
-    onSurface = androidx.compose.ui.graphics.Color(0xFF0F172A),
+    primary = Color(0xFF2563EB),
+    secondary = Color(0xFF4F46E5),
+    background = Color(0xFFF8FAFC),
+    surface = Color(0xFFFFFFFF),
+    onPrimary = Color(0xFFFFFFFF),
+    onBackground = Color(0xFF0F172A),
+    onSurface = Color(0xFF0F172A),
 )
 
 @Composable
